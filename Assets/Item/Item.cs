@@ -16,4 +16,9 @@ public class Item : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
+    protected virtual void Effect()
+    {
+        Destroy(gameObject);
+    }
+
 }

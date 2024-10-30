@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,13 +6,14 @@ using UnityEngine;
 
 public class EntityGold : MonoBehaviour
 {
-    [SerializeField] TextMeshPro TextGold;
+    [SerializeField] TextMeshProUGUI TextGold;
     [SerializeField] int gold;
 
     // Start is called before the first frame update
     void Start()
     {
         gold = 0;
+        TextGold.text = "Gold : " + gold;
     }
 
     // Update is called once per frame
@@ -22,9 +24,18 @@ public class EntityGold : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Coin"))
         {
-            gold ++;
+            gold += 1;
+            TextGold.text = "Gold : " + gold;
+            WaitDestroy();
+            Destroy(other.gameObject);
         }
+        
+    }
+
+    IEnumerator WaitDestroy()
+    {
+        yield return new WaitForSeconds (2);
     }
 }
