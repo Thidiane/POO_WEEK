@@ -5,12 +5,18 @@ using UnityEngine;
 public class EntityHealth : MonoBehaviour
 {
 
-    [SerializeField] int _maxHealth;
+    [SerializeField] int _maxHealth =  100;
 
-    public int CurrentHealth { get; private set; }
+    public int CurrentHealth;
 
 
     private void Awake()
+    {
+        
+        _maxHealth = 100;
+    }
+
+    private void Start()
     {
         CurrentHealth = _maxHealth;
     }
@@ -21,8 +27,9 @@ public class EntityHealth : MonoBehaviour
         if (CurrentHealth < 0)
         {
             CurrentHealth = 0;
+            Debug.Log("mort");
         }
-        Debug.Log("damage");
+        Debug.Log("Current Health: " + CurrentHealth);
     }
 
 }
