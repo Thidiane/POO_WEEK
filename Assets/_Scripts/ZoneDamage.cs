@@ -11,4 +11,10 @@ public class ZoneDamage : HitEntity
         Debug.Log("PV-");
         
     }
+
+    protected override void OnTriggerExit(Collider other)
+    {
+        base.OnTriggerExit(other);
+        Debug.Log("Sortie");
+    }
 }

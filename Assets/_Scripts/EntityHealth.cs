@@ -7,8 +7,8 @@ public class EntityHealth : MonoBehaviour
 
     [SerializeField] int _maxHealth;
 
-    public int CurrentHealth { get;private set; }
-    
+    public int CurrentHealth { get; private set; }
+
 
     private void Awake()
     {
@@ -25,4 +25,4 @@ public class EntityHealth : MonoBehaviour
 
     }
 
-    }
+}

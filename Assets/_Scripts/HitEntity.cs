@@ -13,12 +13,15 @@ public class HitEntity : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             InTrigger = true;
-            entityHealth.TakeDamage(10);
+            entityHealth.TakeDamage(AmountDamage);
         }
     }
 
-    public void TakeDamage()
+    protected virtual void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            InTrigger = false;
+        }
     }
 }
