@@ -4,28 +4,20 @@ using UnityEngine;
 
 public class HitEntity : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    EntityHealth entityHealth;
+    [SerializeField]protected int AmountDamage = 10;
+    [SerializeField] protected bool InTrigger; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            
+            InTrigger = true;
+            entityHealth.TakeDamage(10);
         }
     }
 
-    public void OnTakeDamage()
+    public void TakeDamage()
     {
         
     }

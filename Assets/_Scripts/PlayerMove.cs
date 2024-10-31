@@ -13,17 +13,18 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] InputActionReference _move;
     [SerializeField] Rigidbody _rb;
     [SerializeField, Range(0, 100)]
-    float _speed;
+    public float _speed;
 
 
     public event Action OnStartMove;
     public event Action OnStopMove;
 
-
+    
     Coroutine MovementRoutine { get; set; }
 
     private void Reset()
     {
+        
         _rb = GetComponent<Rigidbody>();
         _speed = 10f;
     }

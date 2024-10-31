@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 58043776}
   - component: {fileID: 58043775}
   - component: {fileID: 58043778}
+  - component: {fileID: 58043779}
   - component: {fileID: 58043777}
   m_Layer: 0
   m_Name: DangerZone
@@ -304,11 +305,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58043774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f72b57696a4fd44686ee9ab3191a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AmountDamage: 0
+  InTrigger: 0
 --- !u!95 &58043778
 Animator:
   serializedVersion: 7
@@ -331,6 +334,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &58043779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58043774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efdeb2eec23737408cf254cfc2aa79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountDamage: 10
+  InTrigger: 0
 --- !u!1 &127736904
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31386448ed24ef4a834e9e8d54ae1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 20
+  _maxHealth: 0
 --- !u!4 &395592695
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,8 +1310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1044316936}
-  _text: {fileID: 0}
-  _playerHealth: {fileID: 1349007869}
+  _text: {fileID: 1680877072}
+  _playerHealth: {fileID: 0}
 --- !u!1 &728913436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f72b57696a4fd44686ee9ab3191a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AmountDamage: 0
+  InTrigger: 0
 --- !u!1 &1044316933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,9 +1899,9 @@ GameObject:
   - component: {fileID: 1349007866}
   - component: {fileID: 1349007865}
   - component: {fileID: 1349007868}
+  - component: {fileID: 1349007872}
   - component: {fileID: 1349007867}
   - component: {fileID: 1349007871}
-  - component: {fileID: 1349007869}
   - component: {fileID: 1349007870}
   m_Layer: 0
   m_Name: Player
@@ -1982,19 +2001,6 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1349007869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349007864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d31386448ed24ef4a834e9e8d54ae1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
 --- !u!114 &1349007870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,6 +2027,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcca2186ac283d449a0bab40d85dce73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1349007872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349007864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8bd40d2c0a0e64e9a8d3356766581d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
 --- !u!1001 &1576631183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2698,6 +2717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MaleCharacterPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189980434977739222, guid: 2dfbb63c9cdf7504faf4ff26b0581598,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8855052669661678444, guid: 2dfbb63c9cdf7504faf4ff26b0581598,
         type: 3}

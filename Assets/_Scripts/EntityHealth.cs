@@ -15,6 +15,14 @@ public class EntityHealth : MonoBehaviour
         CurrentHealth = _maxHealth;
     }
 
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        if (CurrentHealth < 0)
+        {
+            CurrentHealth = 0;
+        }
 
+    }
 
-}
+    }
