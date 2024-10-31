@@ -22,7 +22,7 @@ public class EntityHealth : MonoBehaviour
         {
             CurrentHealth = 0;
         }
-
+        Debug.Log("damage");
     }
 
 }
